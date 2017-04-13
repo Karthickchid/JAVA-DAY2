@@ -1,0 +1,223 @@
+SCANNER
+
+1)
+import java.util.Scanner;
+public class Scannerdemo {
+	public static void main (String arg[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the int number : ");
+		int i=sc.nextInt();
+		String name=sc.next();
+		float f=sc.nextFloat();
+	}
+}
+---------------------------------------------------
+CLASS OBJ CONSTRUCTOR
+2)
+
+public class stud {
+ /// data members
+	private int rollno;
+	private String name;
+	
+	// default constructor
+	public stud()
+	{
+	System.out.println(" in student default constructor....");
+	}
+	//parameterized constructor
+	public stud(int roll, String nm)
+	{
+		System.out.println(" in student PARA constructor....");
+		rollno=roll;
+		name=nm;
+	}
+	
+	int getrollno()
+	{
+		return rollno;
+	}
+	String getname()
+	{
+		return name;
+	}
+	
+	public void showstud()
+	{
+		System.out.println( "rollno:"  +rollno+"\nName :" +name);
+	}
+}
+
+
+public class test {
+	public static void main (String arg[])
+	{
+		stud st1=new stud();
+		st1.showstud();
+		
+		stud st2=new stud(10,"vijay");
+		st2.showstud();
+	}
+}
+
+OP
+----
+in student default constructor....
+rollno:0
+Name :null
+ in student PARA constructor....
+rollno:10
+Name :vijay
+
+
+---------------------------------------------------------------
+
+public class test {
+	public static void main (String arg[])
+	{
+		stud st1=new stud();
+		//st1.showstud()
+		int r=st1.getrollno();
+		System.out.print(r);
+		String n=st1.getname();
+		System.out.print(r);
+		
+		stud st2=new stud(10,"vijay");
+		//st2.showstud();
+		System.out.print(st2.getrollno());
+		System.out.print(st2.getname());
+	}
+}
+
+OP
+----
+in student default constructor....
+00 in student PARA constructor....
+10vijay
+
+**************************************************************************************************
+
+3)
+public class Emp {
+	private int rollno;
+	private String name;
+	public Emp(int rollno, String name) {
+		super();
+		this.rollno = rollno;
+		this.name = name;
+	}
+	public Emp() {
+		super();
+	}
+	public int getRollno() {
+		return rollno;
+	}
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void showEmp()
+	{
+		System.out.println( "rollno:"  +rollno+"\nName :" +name);
+	}
+	@Override
+	public String toString() {
+		return "Emp [rollno=" + rollno + ", name=" + name + "]";
+	}
+
+public class emp1 {
+public static void main(String[] args) {
+
+Emp s=new Emp(11,"athiya");
+s.showEmp();
+	
+// GETTER AND SETTER	
+	Emp e=new Emp();
+	e.setRollno(25);
+	e.setName("CHID");
+    System.out.println(e);
+		
+	}
+
+}
+
+
+OP
+rollno:11
+Name :athiya
+Emp [rollno=25, name=CHID]
+**********************************************************************************************************
+
+
+4)public class Customer {
+
+	private String custid;
+	private String custname;
+	private int custMobile;
+	private static int count;
+	static
+	{
+		System.out.println("");
+		count=10;
+	}
+	public Customer() {
+		count ++;
+		System.out.println( " in default cust constr.....");
+	}
+	public Customer(String custid, String custname, int custMobile) {
+		count++;
+		System.out.println( " in para cust constr.....");
+		this.custid = custid;
+		this.custname = custname;
+		this.custMobile = custMobile;
+	}
+	//static block initialize static data member
+	// constructor initialize non static data member
+	//static methods can't access non static data members
+	// non static methods can access static data member
+ public void showCustDetails()
+ {
+	 System.out.println("No of objecta created: " +count);
+	 System.out.println(this.custid);
+	 System.out.println(this.custname);
+	 System.out.println(this.custMobile);
+ }
+public static void showCount() {
+	// TODO Auto-generated method stub
+	System.out.println(" the count is : " +count);
+}
+	}
+
+
+public class Testcus {
+public static void main(String[] args) 
+{
+	Customer c1=new Customer("C101","jeeva",382973927);
+	Customer c2=new Customer("C102","hari",382973527);
+	Customer c3=new Customer("C103"," muna",389765927);
+	Customer c4=new Customer("C104"," jumo",389739278);
+	
+	Customer.showCount();
+	}
+}
+
+
+OP:
+
+STATIC COUNT
+ in para cust constr.....
+ in para cust constr.....
+ in para cust constr.....
+ in para cust constr.....
+ the count is : 14
+
+**************************************************************************************************************************
+
+
+

@@ -1,0 +1,91 @@
+1)
+public class Book {
+
+	private int bookno;
+	private String title;
+	private String author;
+	private float price;
+	
+	public Book()
+	{
+		
+	}
+	public int getbookno()
+	{
+		return bookno;
+	}
+    public void setbookno(int bookno)
+    {
+    	this.bookno = bookno;
+    }
+    public String gettitle()
+    {
+    	return title;
+    }
+    public void setTitle(String title)
+    {
+     	this.title=title;
+    }
+    public String getauthor()
+    {
+    	return author;
+    }
+    public void setauthor(String author)
+    {
+     	this.author=author;
+    }
+    public float getprice()
+    {
+    	return price;
+    }
+    public void setprice(float price)
+    {
+     	this.price=price;
+    }
+    
+}
+
+
+MAIN PART
+
+import java.util.Scanner;
+public class Bookdetails 
+{
+	public static void main(String a[]) 
+	{
+           	Book b1=new Book();
+           	Scanner s=new Scanner (System.in);
+           	System.out.println(" ENTER BOOK NO : ");
+           	int bid=s.nextInt();
+           	b1.setbookno(bid);
+           	System.out.println(" ENTER BOOK TITLE : ");
+           	String title=s.next();
+           	b1.setTitle(title);
+           	System.out.println(" ENTER BOOK AUTHOR : ");
+           	String au=s.next();
+           	b1.setauthor(au);
+           	System.out.println(" ENTER BOOK PRICE : ");
+           	int pr=s.nextInt();
+           	b1.setprice(pr);
+           	System.out.println(b1.getbookno());
+           	System.out.println(b1.gettitle());
+           	System.out.println(b1.getauthor());
+           	System.out.println(b1.getprice());        	
+	}
+}
+
+OUTPUT:
+ENTER BOOK NO : 
+45
+ ENTER BOOK TITLE : 
+HAMLET
+ ENTER BOOK AUTHOR : 
+SHAKESPEARE
+ ENTER BOOK PRICE : 
+200
+45
+HAMLET
+SHAKESPEARE
+200.0
+
+***********************************************************************
